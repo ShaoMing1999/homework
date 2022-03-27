@@ -1,0 +1,80 @@
+#作業一
+#1由系統自動產生6個不重複的數字(1~100)
+#2使用者自行輸入6個號碼
+#3先印出系統的六個號碼
+#4在印出使用者中了幾個
+#5中2個獲得10個蘋果
+#6中3     20
+#7中4     30
+#8中5     40
+#9中6     50
+
+
+
+import random
+size = list()
+number = list()
+yournumber = list()
+win=0
+
+
+for num in range (1,101):           #創立抽獎池
+    size.append(num)
+
+   
+
+for a in range(6):                  #隨機抽獎
+    n= random.randint(0,len(size)-1)
+    rand = size.pop(n)
+    number.append(rand)
+ 
+
+
+    
+    
+for b in range (6):                 #自由選號         
+    c = int(input("請輸入數字:"))
+    yournumber.append(c)
+    for d in number:
+        if d-c==0:
+            win+=1
+            
+
+print(number)
+print(yournumber)
+print(win)
+
+
+
+if win == 6:
+    print ("恭喜獲得50顆蘋果")
+elif win ==5 :
+    print ("恭喜獲得40顆蘋果")
+elif win ==4 :
+    print ("恭喜獲得30顆蘋果")
+elif win ==3 :
+    print ("恭喜獲得20顆蘋果")
+elif win ==2 :
+    print ("恭喜獲得10顆蘋果")
+else :
+    print("沒有中獎")
+    
+    
+    
+#作業二
+
+#由大到小
+data =[99,1,10,6,88,60]
+reorganize=list()
+for a in range (0,len(data)):
+    number = data.index(max(data))    #轉成位置
+    maxnumber = data.pop(number)      #取出相應位置
+    reorganize.append(maxnumber)    
+    
+print(reorganize)
+
+
+#由小到大
+data1 =[99,1,10,6,88,60]
+data1.sort()
+print(data1)
